@@ -1,0 +1,22 @@
+<div class="dropdown-container">
+<div>
+  <select [(ngModel)]="selectedLanguage" (change)="updateEditorOptions()">
+    <option *ngFor="let lang of languages" [value]="lang.value">
+      {{ lang.label }}
+    </option>
+  </select>
+</div>
+<div>
+  <select [(ngModel)]="selectedTheme" (change)="updateEditorOptions()">
+    <option *ngFor="let theme of themes" [value]="theme.value">
+      {{ theme.label }}
+    </option>
+  </select>
+</div>
+</div>
+<div style="height: 500px">
+  <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+</div>
+
+
+
